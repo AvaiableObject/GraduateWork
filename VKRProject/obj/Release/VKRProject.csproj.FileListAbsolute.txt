@@ -1,0 +1,11 @@
+D:\Учёба\VKRProject\VKRProject\bin\Release\VKRProject.exe.config
+D:\Учёба\VKRProject\VKRProject\bin\Release\VKRProject.exe
+D:\Учёба\VKRProject\VKRProject\bin\Release\VKRProject.pdb
+D:\Учёба\VKRProject\VKRProject\obj\Release\VKRProject.csproj.AssemblyReference.cache
+D:\Учёба\VKRProject\VKRProject\obj\Release\VKRProject.csproj.SuggestedBindingRedirects.cache
+D:\Учёба\VKRProject\VKRProject\obj\Release\VKRProject.Properties.Resources.resources
+D:\Учёба\VKRProject\VKRProject\obj\Release\VKRProject.csproj.GenerateResource.cache
+D:\Учёба\VKRProject\VKRProject\obj\Release\VKRProject.csproj.CoreCompileInputs.cache
+D:\Учёба\VKRProject\VKRProject\obj\Release\VKRProject.exe
+D:\Учёба\VKRProject\VKRProject\obj\Release\VKRProject.pdb
+D:\Учёба\VKRProject\VKRProject\obj\Release\VKRProject.VKR.resources

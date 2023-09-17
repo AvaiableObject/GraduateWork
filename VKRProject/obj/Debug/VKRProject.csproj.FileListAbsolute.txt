@@ -1,0 +1,11 @@
+D:\Учёба\VKRProject\VKRProject\bin\Debug\VKRProject.exe.config
+D:\Учёба\VKRProject\VKRProject\bin\Debug\VKRProject.exe
+D:\Учёба\VKRProject\VKRProject\bin\Debug\VKRProject.pdb
+D:\Учёба\VKRProject\VKRProject\obj\Debug\VKRProject.csproj.AssemblyReference.cache
+D:\Учёба\VKRProject\VKRProject\obj\Debug\VKRProject.csproj.SuggestedBindingRedirects.cache
+D:\Учёба\VKRProject\VKRProject\obj\Debug\VKRProject.Properties.Resources.resources
+D:\Учёба\VKRProject\VKRProject\obj\Debug\VKRProject.csproj.GenerateResource.cache
+D:\Учёба\VKRProject\VKRProject\obj\Debug\VKRProject.csproj.CoreCompileInputs.cache
+D:\Учёба\VKRProject\VKRProject\obj\Debug\VKRProject.exe
+D:\Учёба\VKRProject\VKRProject\obj\Debug\VKRProject.pdb
+D:\Учёба\VKRProject\VKRProject\obj\Debug\VKRProject.VKR.resources
