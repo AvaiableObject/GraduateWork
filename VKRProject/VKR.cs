@@ -67,7 +67,7 @@ namespace VKRProject
             int o = int.Parse(textBoxQ1.Text);
             int p2 = int.Parse(textBoxQ2.Text);
             button1.Enabled = true;
-            
+
             double progress = 100d / (p2 - o);
             double progressValue = progress;
             string outputText = "";
@@ -147,7 +147,7 @@ namespace VKRProject
                     decomposition = new N_adicDecomposition(h, m, N);
                     BigInteger[] Y = new BigInteger[n];
                     Y = decomposition.Decompose();
-                    
+
 
                     //Пусть U - последовательность полученная в 1 части,
                     //а Um - полученная посредством циклического сдвига
@@ -244,7 +244,7 @@ namespace VKRProject
                         Um[n - 1] = x;
                         outputText += $"\r\n";
                         //Считаем S(N)
-                        
+
                         for (int i = 0; i < n; i++)
                         {
                             SN += Um[i] * Ni;
@@ -261,10 +261,10 @@ namespace VKRProject
                         {
                             outputText += $"r = {hm}/{m}\r\n";
                         }
-                    //Считаем разность дробей r - rm
-                    int new_n = n;
+                        //Считаем разность дробей r - rm
+                        int new_n = n;
                         y = h - hm;
-                        if (GCD(y, m) != 1)
+                        if (GCD(Math.Abs((int)y), m) != 1)
                         {
                             BigInteger gcdYM = GCD(y, m);
                             BigInteger temp1 = N;
@@ -326,7 +326,7 @@ namespace VKRProject
                         //Вычисляем Cm
                         //Подсчёт членов последовательности mi
                         BigInteger[] mi = new BigInteger[N];
-                    
+
                         for (int l = 0; l < N; l++)
                         {
                             count = 0;
@@ -339,7 +339,7 @@ namespace VKRProject
                             }
                             mi[l] = count;
                         }
-                    
+
                         if (checkBox2.Checked)
                         {
                             for (int l = 0; l < N; l++)
@@ -365,12 +365,12 @@ namespace VKRProject
                     progressBar.Value = (int)progress;
                     progress += progressValue;
 
-                    if(checkBox4.Checked)
+                    if (checkBox4.Checked)
                     {
                         decimal CmABS = 0;
-                        for(int i = 0; i < CbList.Count; i++)
+                        for (int i = 0; i < CbList.Count; i++)
                         {
-                            if((decimal)Math.Sqrt(CbList[i] * CbList[i] + CiList[i] * CiList[i]) > numericUpDownLimit.Value)
+                            if ((decimal)Math.Sqrt(CbList[i] * CbList[i] + CiList[i] * CiList[i]) > numericUpDownLimit.Value)
                                 outputText = String.Empty;
                             if ((decimal)Math.Sqrt(CbList[i] * CbList[i] + CiList[i] * CiList[i]) > CmABS)
                                 CmABS = (decimal)Math.Sqrt(CbList[i] * CbList[i] + CiList[i] * CiList[i]);
@@ -382,20 +382,20 @@ namespace VKRProject
                         else
                         {
                             textBoxMain.Text += $"Для q = {p} ограничение не выполняется \r\nn = {n}\r\nНаибольшее значение |Cm| = {CmABS}\r\n\r\n";
+                        }
                     }
-                }
                     else
                     {
                         textBoxMain.Text += outputText;
-                    }                    
-                    
-                    outputText = "";                    
+                    }
+
+                    outputText = "";
                 }
                 button1.Enabled = false;
                 button2.Enabled = false;
                 progressBar.Value = 0;
             }).Start();
-            
+
             //progressBar.Value = 0;
         }
 

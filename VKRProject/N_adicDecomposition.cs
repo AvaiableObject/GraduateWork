@@ -99,7 +99,7 @@ namespace VKRProject
                     a[i] = (N + a[i]) % N;
                 }
             }
-            
+
             return a;
         }
     }

@@ -68,7 +68,9 @@
     <Compile Include="VKR.Designer.cs">
       <DependentUpon>VKR.cs</DependentUpon>
     </Compile>
-    <Compile Include="N_adicDecomposition.cs" />
+    <Compile Include="N_adicDecomposition.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="VKR.resx">
