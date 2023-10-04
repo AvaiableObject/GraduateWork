@@ -67,17 +67,21 @@ namespace VKRProject
             int o = int.Parse(textBoxQ1.Text);
             int p2 = int.Parse(textBoxQ2.Text);
             button1.Enabled = true;
+            button2.Enabled = false;
+            progressBar.Value = 0;
 
             double progress = 100d / (p2 - o);
             double progressValue = progress;
             string outputText = "";
 
-            new Thread(() =>
+            Thread thread = new Thread(() =>
             {
                 for (int p = o; p < p2; p++)
                 {
-                    if (GCD(N, p) != 1)
+                    if ((GCD(N, p) != 1))
                     {
+                        if (checkBox4.Checked)
+                            continue;
                         textBoxMain.Text += $"N = {N}, u = {u}, q = {p}\r\nНОД (N, q) != 1 \r\n\r\n";
                         continue;
                     }
@@ -379,10 +383,10 @@ namespace VKRProject
                         {
                             textBoxMain.Text += $"Для q = {p} выполняется ограничение \r\nn = {n}\r\nНаибольшее значение |Cm| = {CmABS}\r\n\r\n";
                         }
-                        else
+                        /*else
                         {
                             textBoxMain.Text += $"Для q = {p} ограничение не выполняется \r\nn = {n}\r\nНаибольшее значение |Cm| = {CmABS}\r\n\r\n";
-                        }
+                        }*/
                     }
                     else
                     {
@@ -394,8 +398,8 @@ namespace VKRProject
                 button1.Enabled = false;
                 button2.Enabled = false;
                 progressBar.Value = 0;
-            }).Start();
-
+            });
+            thread.Start();
             //progressBar.Value = 0;
         }
 
