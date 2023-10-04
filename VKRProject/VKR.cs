@@ -68,16 +68,18 @@ namespace VKRProject
             int p2 = int.Parse(textBoxQ2.Text);
             button1.Enabled = true;
             button2.Enabled = false;
-            progressBar.Value = 0;
 
-            double progress = 100d / (p2 - o);
-            double progressValue = progress;
+            //progressBar.Value = 0;
+
+            //double progress = 100d / (p2 - o);
+            //double progressValue = progress;
             string outputText = "";
 
             Thread thread = new Thread(() =>
             {
                 for (int p = o; p < p2; p++)
                 {
+                    currentQ.Text = p.ToString();
                     if ((GCD(N, p) != 1))
                     {
                         if (checkBox4.Checked)
@@ -366,8 +368,8 @@ namespace VKRProject
                         outputText += $"C_m = {Math.Round(Cb, 5)} + i * {Math.Round(Ci, 5)}\r\n";
                     }
                     outputText += $"\r\n\r\n";
-                    progressBar.Value = (int)progress;
-                    progress += progressValue;
+                    //progressBar.Value = (int)progress;
+                    //progress += progressValue;
 
                     if (checkBox4.Checked)
                     {
@@ -397,10 +399,9 @@ namespace VKRProject
                 }
                 button1.Enabled = false;
                 button2.Enabled = false;
-                progressBar.Value = 0;
+                //progressBar.Value = 0;
             });
             thread.Start();
-            //progressBar.Value = 0;
         }
 
         private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
