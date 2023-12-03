@@ -1,17 +1,10 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Numerics;
 using System.IO;
 using System.Threading;
-using System.Globalization;
 
 namespace VKRProject
 {
@@ -19,6 +12,7 @@ namespace VKRProject
     {
         //Создаем объект класса
         private N_adicDecomposition decomposition = new N_adicDecomposition();
+        private IsSimple isSimple = new IsSimple();
         private ManualResetEvent _manualEvent = new ManualResetEvent(true);
         public VKR()
         {
@@ -80,6 +74,12 @@ namespace VKRProject
                 for (int p = o; p < p2; p++)
                 {
                     currentQ.Text = p.ToString();
+
+                    if (!isSimple.IsPrime(p) && N > 2)
+                    {
+                        continue;
+                    }
+
                     if ((GCD(N, p) != 1))
                     {
                         if (checkBox4.Checked)
@@ -87,6 +87,7 @@ namespace VKRProject
                         textBoxMain.Text += $"N = {N}, u = {u}, q = {p}\r\nНОД (N, q) != 1 \r\n\r\n";
                         continue;
                     }
+
                     int count; // Счётчик членов последовательности
                     _manualEvent.WaitOne();
                     //Ищем n исходя из эквивалентности N^n == 1 mod q
@@ -106,6 +107,10 @@ namespace VKRProject
                         n++;
                     }
 
+                    if(!((p - 1) % n == 0) && N > 2)
+                    {
+                        continue;
+                    }
                     //Считаем A для построения u_i
                     int a = p % N;
 
